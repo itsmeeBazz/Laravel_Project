@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -23,9 +24,6 @@ Route::get('/info', function(){
     echo 'info';
 });
 
-Route::get('/register', function(){
-    echo 'REGISTER';
-});
- 
+Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/news/NewsShow', [NewsController::class, 'show']);
 Route::get('/news/NewsCreated', [NewsController::class, 'created']);
